@@ -1,0 +1,83 @@
+[package]
+requires = 'vunit >= "5.0.0.dev15" and vhdl >= "2008"'
+library = "osvvm"
+
+[[package.sources]]
+include = [
+  "hdl/AlertLogPkg.vhd",
+  "hdl/ClockResetPkg.vhd",
+  "hdl/CoveragePkg.vhd",
+  "hdl/CoveragePtPkg.vhd",
+  "hdl/DelayCoveragePkg.vhd",
+  "hdl/FileUtilPkg.vhd",
+  "hdl/IdFifoPtPkg.vhd",
+  "hdl/IfElsePkg.vhd",
+  "hdl/MemoryGenericPkg.vhd",
+  "hdl/MemoryPkg.vhd",
+  "hdl/MemorySupportPkg.vhd",
+  "hdl/MessageListPkg.vhd",
+  "hdl/NamePkg.vhd",
+  "hdl/NameStorePkg.vhd",
+  "hdl/OsvvmContext.vhd",
+  "hdl/OsvvmGlobalPkg.vhd",
+  "hdl/OsvvmScriptSettingsPkg.vhd",
+  "hdl/OsvvmScriptSettingsPkg_default.vhd",
+  "hdl/OsvvmSettingsPkg.vhd",
+  "hdl/OsvvmSettingsPkg_default.vhd",
+  "hdl/OsvvmTypesPkg.vhd",
+  "hdl/RandomBasePkg.vhd",
+  "hdl/RandomPkg.vhd",
+  "hdl/RandomProcedurePkg.vhd",
+  "hdl/ReportPkg.vhd",
+  "hdl/ResizePkg.vhd",
+  "hdl/ResolutionPkg.vhd",
+  "hdl/ScoreboardGenericPkg.vhd",
+  "hdl/ScoreboardPkg_IntV.vhd",
+  "hdl/ScoreboardPkg_int.vhd",
+  "hdl/ScoreboardPkg_signed.vhd",
+  "hdl/ScoreboardPkg_slv.vhd",
+  "hdl/ScoreboardPkg_unsigned.vhd",
+  "hdl/SetGetBoundedGenericPkg.vhd",
+  "hdl/SetGetBoundedPkg_Instances.vhd",
+  "hdl/SortListPkg_int.vhd",
+  "hdl/TbUtilPkg.vhd",
+  "hdl/TextUtilPkg.vhd",
+  "hdl/TranscriptBasePkg.vhd",
+  "hdl/TranscriptPkg.vhd",
+]
+
+[[package.sources]]
+include = ["hdl/CoverageVendorApiPkg_NVC.vhd"]
+when = 'simulator == "nvc" and nvc_version >= "1.15.2"'
+
+[[package.sources]]
+include = ["hdl/CoverageVendorApiPkg_Aldec.vhd"]
+when = 'simulator == "rivierapro" or simulator == "activehdl"'
+
+[[package.sources]]
+include = ["hdl/CoverageVendorApiPkg_default.vhd"]
+when = 'simulator == "ghdl" or simulator == "modelsim" or (simulator == "nvc" and nvc_version < "1.15.2")'
+
+[[package.sources]]
+include = ["hdl/LanguageSupport2019Pkg.vhd"]
+when = 'vhdl >= "2019"'
+
+[[package.sources]]
+include = ["hdl/deprecated/LanguageSupport2019Pkg_c.vhd"]
+when = 'vhdl == "2008"'
+
+[[package.sources]]
+include = ["hdl/FileLinePathPkg.vhd", "hdl/AssertApiPkg.vhd", "hdl/RandomPkg2019.vhd"]
+when = 'vhdl >= "2019" and simulator != "ghdl"'
+
+[[package.sources]]
+include = ["hdl/deprecated/FileLinePathPkg_c.vhd", "hdl/deprecated/AssertApiPkg_c.vhd", "hdl/deprecated/RandomPkg2019_c.vhd"]
+when = 'vhdl == "2008" or simulator == "ghdl"'
+
+[[package.sources]]
+include = ["hdl/DynamicVectorGenericPkg.vhd", "hdl/DynamicVectorPkg_instances.vhd"]
+when = 'vhdl >= "2019" and (simulator == "rivierapro" or (simulator == "nvc" and nvc_version >= "1.20"))'
+
+[[package.sources]]
+include = ["hdl/deprecated/DynamicVectorPkg_IntV_c.vhd", "hdl/deprecated/DynamicVectorPkg_slv_c.vhd"]
+when = 'vhdl == "2008" or (simulator != "rivierapro" and (simulator != "nvc" or nvc_version < "1.20"))'

@@ -1,0 +1,3 @@
+[submodule "src/vunit_osvvm/hdl"]
+	path = src/vunit_osvvm/hdl
+	url = https://github.com/osvvm/osvvm.git

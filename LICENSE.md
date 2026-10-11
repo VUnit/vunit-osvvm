@@ -1,0 +1,1 @@
+vunit-osvvm, except for the redistribution of [OSVVM](https://github.com/osvvm/osvvm), is released under the terms of [Mozilla Public License, v. 2.0](http://mozilla.org/MPL/2.0). © 2026 Lars Asplund, lars.anders.asplund@gmail.com.
