@@ -56,7 +56,7 @@ when = 'simulator == "rivierapro" or simulator == "activehdl"'
 
 [[package.sources]]
 include = ["hdl/CoverageVendorApiPkg_default.vhd"]
-when = 'simulator == "ghdl" or simulator == "modelsim" or (simulator == "nvc" and nvc_version < "1.15.2")'
+when = 'simulator != "rivierapro" and simulator != "activehdl" and (simulator != "nvc" or nvc_version < "1.15.2")'
 
 [[package.sources]]
 include = ["hdl/LanguageSupport2019Pkg.vhd"]

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vunit-osvvm"
-version = "0.1.0"
+version = "0.1.1"
 description = "A VUnit package providing the OSVVM VHDL library."
 urls = {homepage = "https://github.com/VUnit/vunit-osvvm"}
 readme = "README.md"
